@@ -1,4 +1,4 @@
-<h1>Artemis</h1>
+<h1>Portfolio</h1>
 <h2>What is it?</h2>
 <p class="quick_info">It out this is my personal website. In this website you will find my current and future projetcs, and get to know me!</p>
 <h2>Upgrades</h2>
