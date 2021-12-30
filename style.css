@@ -1,0 +1,453 @@
+*{
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  top: 0;
+  right: 0;
+  position: absolute;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  margin: 0;
+}
+
+/*———————————————————
+        header
+————————————————————*/
+header{
+  width: 100%;
+  height: auto;
+  list-style: none;
+}
+
+/*———————————————————
+        Home
+————————————————————*/
+#home{
+  height: 100vh;
+	width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home .bg{
+  background: url('https://wallpaperaccess.com/full/1267249.jpg') no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	opacity:.20;
+}
+
+#home section{
+  width: 100vw;
+  height: auto;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home section h3{
+  font-size: 6vh;
+  color: white;
+  letter-spacing: 0.5vh;
+}
+
+#home section h3 hr{
+  transform-origin: center center;
+  transform: scaleX(30%);
+  border: none;
+  background-color: white;
+  border-bottom: 0.1vh solid white;
+}
+
+#home section p{
+  text-align: center;
+  margin-top: 2vh;
+  color: whitesmoke;
+	font-size:3vh;
+	font-family: monospace;
+  max-width: 50vw;
+}
+
+/*──────────────────
+    social media
+──────────────────*/
+
+.social-media{
+	padding: 10px;
+	display: flex;
+	position: center;
+  align-items: space-around;
+	justify-content:center;
+}
+
+.social-media a {
+    margin: 10px;
+    font-size: 2rem;
+    text-align:center;
+    display: inline-block;
+	  color: white;
+    transition: .5s;
+}
+
+.social-media a i{
+	cursor: pointer;
+}
+
+.social-media a:hover {
+	color: #ff5249cb;
+	text-shadow: 0 0 50px #ff5249cb;
+}
+/*———————————————————
+      Projects
+————————————————————*/
+#projects{
+  background-color: rgb(20, 20, 20);
+  height: auto;
+  min-height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+#projects h3{
+  font-size: 1.5rem;
+  position: relative;
+  text-align: center;
+  color: white;
+  top: 50px;
+}
+
+#projects h4{
+  text-align: center;
+  font-size: 1.2rem;
+  word-spacing: 10px;
+  letter-spacing: 0.5vh;
+  position: relative;
+  top: 75px;
+  color: rgb(220, 220, 220);
+}
+#projects h4 hr{
+  transform-origin: center center;
+  transform: scaleX(15%) translateY(20px);
+  border: none;
+  background-color: white;
+  border-bottom: 0.2vh solid white;
+}
+.card-container{
+  margin-top: 200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center; 
+}
+
+.card{
+  background-image: url(https://res.cloudinary.com/dwnoneszt/image/upload/v1486998762/PortfolioLanding/1.jpg);
+  background-size: cover;
+  height:250px;
+  width:350px;
+ display:inline-block;
+  margin: 5px;
+}
+
+.card-content{
+  height: 100%;
+  width: 100%;   
+  background: radial-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.98));
+  opacity: 0;
+  transition: .5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container-active{
+  opacity: 1;
+  transition: .1s;
+}
+
+.card-content .projects-summary{
+  color: white;
+  text-align: center;
+  list-style-type: none;
+}
+
+.card-content .projects-summary li{
+  transition: transform .2s ease-in-out;
+	transform: translateY(-6vh);
+	opacity: 0;
+}
+
+.card-container-active .projects-summary li{
+  animation: slideup 1.05s forwards;
+	transition: transform .2s ease-in-out;
+}
+
+.card-content h2{
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  letter-spacing: .4vh;
+}
+
+.card-content p{
+  color:gray;
+  margin-bottom: 15px;
+  letter-spacing: .2vh;
+}
+
+.card-content button{
+  font-size: 1.2rem;
+  color: #ff5249cb;
+  border: 1px solid white;
+  background: none;
+  padding: 2px 30px;
+  cursor: pointer;
+}
+
+.more_info{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  width: 320px;
+  height: 500px;
+  background-color: white;
+  transition: .5s;
+}
+
+.more_info_open{
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.more_info p{
+  text-align: center;
+}
+
+.more_info .project-title{
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more_info .project-title p{
+  font-size: 1.2rem;
+}
+
+.more_info .project-title .close{
+  font-size: 1.5rem;
+  position: absolute;
+  right: 5%;
+  color: gray;
+  padding: 5px;
+  transition: .5s;
+}
+
+.more_info .project-summary{
+  font-size: 1rem;
+  color:grey;
+  height: 25%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more_info .project-image{
+  height: 60%;
+  width: 100%;
+}
+
+.more_info .project-image .img{
+  height: 100%;
+  width: 100%;
+  background-image: url(https://res.cloudinary.com/dwnoneszt/image/upload/v1486998762/PortfolioLanding/1.jpg);
+  background-size: cover;
+}
+
+/*────────────────── 
+      Contact
+──────────────────*/
+#contact{
+  height: 12vh;
+	width: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(40,40,40);
+  overflow: hidden;
+}
+
+/*────────────────── 
+   Media queries
+──────────────────*/
+
+@media screen and (max-width: 1024px) {
+  #home section p{
+    max-width: 100vw;
+  }
+
+  .quote{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .quote{
+    display: none;
+  }
+
+  #projects h4{
+    display: none;
+  }
+  
+  .card-container{
+    margin-top: 75px;
+  }
+
+  .card{
+    margin: 25px 0px;
+  }
+}
+
+/*────────────────── 
+     hamburger
+──────────────────*/
+.hamburger{
+  position: fixed;
+  right:17px;
+  top:17px;
+	cursor:pointer;
+	z-index: 5;
+	background-color: #ff5249cb; 
+  border-radius: 7px;
+}
+
+.hamburger div{
+	width: 30px;
+	height: 4px;
+	background: white;
+	margin: 7px;
+	transition:all 0.3s ease;
+}
+
+.toggle .line1{
+	transform: translateY(11px) rotate(-45deg);
+}
+
+.toggle .line2{
+	opacity: 0;
+}
+
+ .toggle .line3{
+	transform: translateY(-11px) rotate(45deg);
+}
+
+.hamburger:hover{
+	 box-shadow: 0px 0px 3vh #ff5249cb;
+	transition: .2s
+}
+
+/*────────────────── 
+        Navbar
+──────────────────*/
+.menu{
+	position: fixed;
+	z-index: 4;
+	font-family: monospace;
+	color: white;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: radial-gradient(rgba(255, 255, 255, 0.1) ,rgba(0, 0, 0, 0.90)); 
+	transform: scale(0);
+}
+
+.menu ul{
+	list-style: none;
+	font-size: 3vh;
+	letter-spacing: 1vh;
+	text-align: center;
+	word-spacing: -2vh;
+	display: none;
+}
+
+.menu .openul{
+	display: block;
+}
+
+.menu ul li{
+	padding: 3vh 0;
+	width:100vw;
+	cursor: pointer;
+	transition: transform .2s ease-in-out;
+	transform: translateY(10vh);
+	opacity: 0;
+}
+
+
+.menu ul li:hover{
+	background-color: rgb(90,90,90,0.4);
+	color: #ff5249cb;
+	transition: .2s;
+}
+
+.menu ul .ol{
+	animation: slideup .7s forwards;
+	transition: transform .2s ease-in-out;
+}
+
+#p4{
+	animation-delay: .7s;
+}
+
+#p3{
+	animation-delay: 0.525s;
+}
+
+#p2{
+	animation-delay: 0.35s;
+}
+
+#p1{
+	animation-delay: 0.175s;
+}
+
+.mo{
+	transform: scale(1);
+	transition: .2s ease-in-out;
+}
+
+@keyframes slideup{
+  to {
+		transform: translateY(0);
+		opacity: 1;	
+	}
+}
+
