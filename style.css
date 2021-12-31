@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+:root{
+  --leftover_height: 60%;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -70,7 +74,8 @@ header{
 
 #home section h3 hr{
   transform-origin: center center;
-  transform: scaleX(30%);
+  transform: scaleX(0.3);
+  -webkit-transform: scaleX(0.3);
   border: none;
   background-color: white;
   border-bottom: 0.1vh solid white;
@@ -90,6 +95,7 @@ header{
 ──────────────────*/
 
 .social-media{
+  margin-top: 1vh;
 	padding: 10px;
 	display: flex;
 	position: center;
@@ -99,7 +105,7 @@ header{
 
 .social-media a {
     margin: 10px;
-    font-size: 2rem;
+    font-size: 3vh;
     text-align:center;
     display: inline-block;
 	  color: white;
@@ -130,7 +136,7 @@ header{
 }
 
 #projects h3{
-  font-size: 1.5rem;
+  font-size: 3.2vh;
   position: relative;
   text-align: center;
   color: white;
@@ -139,7 +145,7 @@ header{
 
 #projects h4{
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 2.7vh;
   word-spacing: 10px;
   letter-spacing: 0.5vh;
   position: relative;
@@ -153,6 +159,7 @@ header{
   background-color: white;
   border-bottom: 0.2vh solid white;
 }
+
 .card-container{
   margin-top: 200px;
   width: 100%;
@@ -163,7 +170,6 @@ header{
 }
 
 .card{
-  background-image: url(https://res.cloudinary.com/dwnoneszt/image/upload/v1486998762/PortfolioLanding/1.jpg);
   background-size: cover;
   height:250px;
   width:350px;
@@ -271,7 +277,7 @@ header{
 .more_info .project-summary{
   font-size: 1rem;
   color:grey;
-  height: 25%;
+  height: auto;
   width: 100%;
   display: flex;
   align-items: center;
@@ -279,15 +285,22 @@ header{
 }
 
 .more_info .project-image{
-  height: 60%;
+  height: var(--leftover_height);
   width: 100%;
+  margin-top: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+
 }
 
 .more_info .project-image .img{
   height: 100%;
   width: 100%;
-  background-image: url(https://res.cloudinary.com/dwnoneszt/image/upload/v1486998762/PortfolioLanding/1.jpg);
-  background-size: cover;
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
 /*────────────────── 
@@ -304,37 +317,6 @@ header{
   overflow: hidden;
 }
 
-/*────────────────── 
-   Media queries
-──────────────────*/
-
-@media screen and (max-width: 1024px) {
-  #home section p{
-    max-width: 100vw;
-  }
-
-  .quote{
-    display: none;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .quote{
-    display: none;
-  }
-
-  #projects h4{
-    display: none;
-  }
-  
-  .card-container{
-    margin-top: 75px;
-  }
-
-  .card{
-    margin: 25px 0px;
-  }
-}
 
 /*────────────────── 
      hamburger
@@ -451,5 +433,124 @@ header{
 		transform: translateY(0);
 		opacity: 1;	
 	}
+}
+
+/*────────────────── 
+   Media queries
+──────────────────*/
+
+
+@media screen and (max-width: 1024px) {
+  #home section p{
+    max-width: 100vw;
+  }
+
+  .quote{
+    display: none;
+  }
+
+  #projects h4{
+    display: none;
+  }
+  
+  .card-container{
+    margin-top: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card{
+    margin: 25px 0px;
+  }
+
+}
+
+@media screen and (min-width:1367px) {
+    #projects{
+      padding-bottom: 4.1vh;
+    }
+
+    #projects h3{
+      top: 6.92vh;
+    }
+
+  #projects h4{
+    word-spacing: 1.38vh;
+    letter-spacing: 0.5vh;
+    top: 10.38vh;
+  }
+  #projects h4 hr{
+    transform: scaleX(15%) translateY(2.77vh);
+  }
+
+  .card-container{
+    margin-top: 27.7vh;
+  }
+
+  .card{
+    height:34vh;
+    width:20.83vw;
+    margin: 0.69vh;
+  }
+
+
+  .card-content h2{
+    font-size: 2.7vh;
+    margin-bottom: 2.7vh;
+  }
+
+  .card-content p{
+    font-size: 2.25vh;
+    color:gray;
+    margin-bottom: 2vh;
+  }
+
+  .card-content button{
+    font-size: 2.7vh;
+    border: 0.13vh solid white;
+    padding: 0.26vh 4.15vh;
+  }
+
+  .more_info{
+    width: 44.32vh;
+    height: 69.25vh;
+  }
+
+  .more_info .project-title p{
+    font-size: 2.5vh;
+  }
+
+  .more_info .project-title .close{
+    font-size: 2vh;
+    padding: 0.69vh;
+  }
+
+  .more_info .project-summary{
+    font-size: 2.2vh;
+  }
+
+  .more_info .project-image{
+    margin-top: 1.38vh;
+  }
+
+  .hamburger{
+    border-radius: 0.96vh;
+  }
+
+  .hamburger div{
+    width: 1.95vw;
+    height: 0.55vh;
+    margin: 0.95vh; 
+  }
+
+    .toggle .line1{
+    transform: translateY(1.52vh) rotate(-45deg);
+  }
+
+  .toggle .line3{
+    transform: translateY(-1.52vh) rotate(45deg);
+  }   
 }
 
