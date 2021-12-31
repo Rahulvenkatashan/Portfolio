@@ -6,6 +6,11 @@
 <div class="summary" data-summary-type = "A webiste about me" data-image = https://wallpaperaccess.com/full/1267249.jpg></div>
 
 <!---
-your comment goes here
-and here
+
+Neumophoric Calculator, A simple web calculator
+ChatAway, A simple chat application
+Panel, A smart mirror
+Plant Monitor, A baby monitor for your plant
+Rasp Tv, A smart tv module
+
 -->
