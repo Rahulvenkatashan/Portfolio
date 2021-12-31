@@ -230,15 +230,17 @@ header{
   position: fixed;
   top: 50%;
   left: 50%;
+  opacity: 0;
   transform: translate(-50%,-50%) scale(0);
   width: 320px;
   height: 500px;
   background-color: white;
-  transition: .5s;
+  transition: opacity .5s ease-in-out;
 }
 
 .more_info_open{
   transform: translate(-50%,-50%) scale(1);
+  opacity: 1;
 }
 
 .more_info p{

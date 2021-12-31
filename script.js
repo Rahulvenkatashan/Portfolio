@@ -1,3 +1,4 @@
+// upgrades & quick_info
 // Disable scroll
 var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
@@ -54,8 +55,33 @@ hamburger.onclick = () => {
     }
   }, 300)
 }
+// Fetch projects
+async function fetch_repos(create_cards=false){
+    let response = await fetch("https://api.github.com/users/Rahulvenkatashan/repos");
+    let result = await response.json()
+    // Loop through all projects
+    for(let i = 0; i<result.length;i++){
+      // Local variables
+      let sub_response = await fetch(`https://raw.githubusercontent.com/Rahulvenkatashan/${result[i].name}/main/README.md`)
+      let sub_result = await sub_response.text()
+      console.log(sub_result)
+      if(!create_cards){ //create the cards
 
-//Projects
+      } else{ //Update more info
+        let temp_div = document.createElement('div')
+        temp_div.innerHTML = sub_result
+        let text = ([...temp_div.querySelectorAll('.upgrades, .quick_info, .summary')].map(elm => elm.innerText)).join(' ')
+
+        if(result[i].name == create_cards){
+          console.log(text)
+        }
+      }
+    }
+} 
+
+fetch_repos()
+
+//Open Projects
 $('.card-content').click(function(){
   const card_overlays = document.querySelectorAll('.card-content');
   for(const elm of card_overlays){
