@@ -1,43 +1,11 @@
-// upgrades & quick_info
-// Disable scroll
-var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
-
-function preventDefault(e) {
-  e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
+// delay
+function timer(timeInMs){
+  const end_time = new Date().getTime() + timeInMs
+  let current_time = new Date().getTime()
+  while (current_time < end_time){
+    current_time = new Date().getTime()
+    console.log(current_time)
   }
-}
-
-// modern Chrome requires { passive: false } when adding event
-var supportsPassive = false;
-try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () { supportsPassive = true; }
-  }));
-} catch (e) { }
-
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-// call this to Disable
-function disableScroll() {
-  window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-  window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-  window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-  window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-
-// call this to Enable
-function enableScroll() {
-  window.removeEventListener('DOMMouseScroll', preventDefault, false);
-  window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-  window.removeEventListener('touchmove', preventDefault, wheelOpt);
-  window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
 }
 
 // Hamburger 
@@ -55,8 +23,6 @@ hamburger.onclick = () => {
     }
   }, 300)
 }
-
-// Get image meta data
 
 // Fetch projects
 async function fetch_repos(create_cards = false, elm = false) {
@@ -99,6 +65,7 @@ async function fetch_repos(create_cards = false, elm = false) {
   }
 }
 
+
 //Open Projects
 $(document).on('click', '.card-content', async function () {
   const card_overlays = document.querySelectorAll('.card-content');
@@ -115,14 +82,14 @@ $(document).on('click', '.card-content', async function () {
 $(document).on('click', '.third-point', function () {
   $('.more_info').addClass('more_info_open')
   document.querySelector('.card-container').style.filter = "brightness(30%)"
-  disableScroll()
+  document.body.style.overflow = 'hidden';
 })
 
 // Remove more info
 $(document).on('click', '.close', function () {
   $('.more_info').removeClass('more_info_open')
   document.querySelector('.card-container').style.filter = ''
-  enableScroll()
+  document.body.style.overflow = '';
 })
 
 // Smooth scroll
@@ -148,3 +115,7 @@ $('.links li').click(function () {
 
 // Driver code
 fetch_repos()
+
+// Loader image
+$(".loader_image").delay(1250).fadeOut();
+$(".loader").delay(1250).fadeOut("slow");

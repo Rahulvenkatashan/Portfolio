@@ -34,6 +34,27 @@ header{
 }
 
 /*———————————————————
+    Loader image
+————————————————————*/
+.loader_image{
+  position: fixed;
+  z-index: 998;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader_image .loader{
+  background-image: url(https://res.cloudinary.com/dwnoneszt/image/upload/v1486999584/preloader6_yf4oxu.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100px;
+}
+/*———————————————————
         Home
 ————————————————————*/
 #home{
