@@ -13,5 +13,5 @@ ChatAway, A simple chat application
 Panel, A smart mirror
 Plant Monitor, A baby monitor for your plant
 Rasp Tv, A smart tv module
-
+Future projects.
 -->
